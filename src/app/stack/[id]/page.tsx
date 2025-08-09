@@ -29,7 +29,7 @@ interface Roast {
 }
 
 interface StackPageProps {
-  params: { id: string }
+    params: Promise<{ id: string }>;
 }
 
 export default async function StackPage(props: StackPageProps) {

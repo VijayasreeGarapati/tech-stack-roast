@@ -6,7 +6,7 @@ import { Plus, Flame } from 'lucide-react'
 
 // Convert database row to our TechStack interface
 interface TechStackRow {
-  id: string | number;
+  id: string ;
   title: string;
   frontend: string;
   backend: string;
@@ -16,7 +16,7 @@ interface TechStackRow {
   description: string;
   author_name: string;
   is_anonymous: boolean;
-  created_at: string | Date;
+  created_at: string;
   roast_count: number;
 }
 
