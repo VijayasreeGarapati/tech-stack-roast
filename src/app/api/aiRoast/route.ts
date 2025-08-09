@@ -50,9 +50,9 @@ export async function POST(request: NextRequest) {
     const roast = data.candidates?.[0]?.content?.parts?.[0]?.text || ''
 
     return NextResponse.json({ roast })
-  } catch (err: any) {
+  } catch (err) {
     return NextResponse.json(
-      { error: err.message || 'Unknown error from AI roast generation' },
+      { error: err|| 'Unknown error from AI roast generation' },
       { status: 500 }
     )
   }
