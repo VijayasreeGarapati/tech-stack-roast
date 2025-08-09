@@ -5,7 +5,22 @@ import Link from 'next/link'
 import { Plus, Flame } from 'lucide-react'
 
 // Convert database row to our TechStack interface
-function convertDatabaseRowToTechStack(row: any): TechStack {
+interface TechStackRow {
+  id: string | number;
+  title: string;
+  frontend: string;
+  backend: string;
+  database: string;
+  hosting: string;
+  other_tools?: string[] | null;
+  description: string;
+  author_name: string;
+  is_anonymous: boolean;
+  created_at: string | Date;
+  roast_count: number;
+}
+
+function convertDatabaseRowToTechStack(row: TechStackRow): TechStack {
   return {
     id: row.id,
     title: row.title,

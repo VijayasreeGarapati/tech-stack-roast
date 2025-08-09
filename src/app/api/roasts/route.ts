@@ -72,7 +72,7 @@ export async function POST(request: NextRequest) {
     }
 
     return NextResponse.json({ roast: data?.[0] })
-  } catch (err: any) {
-    return NextResponse.json({ error: err.message || 'Unknown error' }, { status: 500 })
+  } catch (err) {
+    return NextResponse.json({ error: err|| 'Unknown error' }, { status: 500 })
   }
 }
