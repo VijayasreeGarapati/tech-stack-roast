@@ -45,34 +45,10 @@ export async function POST(request: NextRequest) {
       },
     ])
 
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 500 })
-    }
-
-    // Increment roast_count with safe fetch + update
-    const { data: stackData, error: fetchError } = await supabase
-      .from('stacks')
-      .select('roast_count')
-      .eq('id', stack_id)
-      .single()
-
-    if (!fetchError && stackData) {
-      const newCount = (stackData.roast_count ?? 0) + 1
-      console.log("newCount", newCount)
-      const { error: updateError } = await supabase
-        .from('stacks')
-        .update({ roast_count: newCount })
-        .eq('id', stack_id)
-
-      if (updateError) {
-        console.error('Failed to update roast_count:', updateError)
-      }
-    } else {
-      console.error('Failed to fetch roast_count:', fetchError)
-    }
-
     return NextResponse.json({ roast: data?.[0] })
-  } catch (err) {
+  } 
+  
+  catch (err) {
     return NextResponse.json({ error: err|| 'Unknown error' }, { status: 500 })
   }
 }
