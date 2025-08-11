@@ -37,6 +37,8 @@ function convertDatabaseRowToTechStack(row: TechStackRow): TechStack {
   }
 }
 
+export const dynamic = "force-dynamic";
+
 export default async function HomePage() {
   // Fetch stacks from Supabase
   const { data: stacksData, error } = await supabase
