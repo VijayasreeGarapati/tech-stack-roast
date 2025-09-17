@@ -2,6 +2,8 @@
 
 TechRoast is a full-stack platform where developers can submit their technology stacks and receive roasts from the community or from AI. Inspired by "Roast Me," this project adds a fun twist to developer culture by turning your tech choices into the subject of constructive, brutal, or meme-style feedback.
 
+Available at - https://tech-stack-roast.vercel.app/ 
+
 ---
 
 ## Project Overview
